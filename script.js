@@ -23,10 +23,10 @@ const runTimer = (interval) => {
                 second--
                 time.textContent = formatedTime(second)
                 if (second % 2 === 0) {
-                    border.style.backgroundImage = "url(/resource/bahlil.jpg)"
+                    border.style.backgroundImage = "url('/resource/bahlil.jpg')"
                 }
                 else {
-                   border.style.backgroundImage = "url(/resource/bahlil_merem.png)";
+                   border.style.backgroundImage = "url('/resource/bahlil_merem.png')";
                 }
             }
             else {
