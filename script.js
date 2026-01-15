@@ -12,24 +12,28 @@ reset.addEventListener("click", () => {
     resetTimer()
 })
 
-let second = 1
+let second = 0
 let intervalId
 
 const runTimer = (interval) => {
-    second = interval + 1
-    if (!intervalId) {
+    second = interval
+    if (!intervalId && second > 0) {
         intervalId = setInterval(() => {
-            if (second > 0) {
-                second--
-                time.textContent = formatedTime(second)
-                if (second % 2 === 0) {
-                    border.style.backgroundImage = "url('resource/bahlil.jpg')"
-                }
-                else {
-                   border.style.backgroundImage = "url('resource/bahlil_merem.png')";
-                }
+            time.textContent = formatedTime(second)
+
+            if (second % 2 === 0) {
+                border.style.backgroundImage = "url('resource/bahlil.jpg')"
+            } else {
+                border.style.backgroundImage = "url('resource/bahlil_merem.png')";
             }
-            else {
+
+            if (second < 60) {
+                border.style.filter = second % 2 === 0 ? "hue-rotate(90deg)" : "hue-rotate(0deg)"
+            }
+
+            second--;
+
+            if (second === 0) {
                 time.textContent = "Your Egg Finished!!!"
             }
         }, 1000);
