@@ -35,3 +35,12 @@ body{
     align-items: center;
     flex-direction: column;
 }
+
+#menu_container{
+    margin-top: 10px;
+}
+
+button{
+    font-family: pixelfont;
+    font-size: large;
+}
